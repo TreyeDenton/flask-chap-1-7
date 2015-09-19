@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<div class="page-header">
+	<h1>Hallo, {% if name %}{{ name }}{% else %}Stranger{% endif%}</h1>
+	<p>The current local date and time are: {{ moment(current_time).format('LLL') }}</p>
+	<p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+
+{{ wtf.quick_form(form) }}
+
+</div>
+
+{% endblock %}
